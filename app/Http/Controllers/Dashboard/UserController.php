@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -49,7 +50,15 @@ class UserController extends Controller
         ]);
 
         $request->merge(['password'=>bcrypt($request->password)]);
-        $user = User::create($request->all());
+
+        $data = $request->except('image');
+        if ($request->hasFile('image')){
+            $image = $request->image->store('images','public');
+            $data['image'] = $image;
+        }
+//        dd($data);
+        $user = User::create($data);
+
         if($request->role_id == 3){
             $user->attachRoles([$request->role_id]);
         }else{
@@ -77,7 +86,14 @@ class UserController extends Controller
             'image' => 'sometimes|nullable|image',
             'role_id' => 'required|numeric',
         ]);
-        $user->update($request->all());
+        $data = $request->except('image');
+
+        if ($request->hasFile('image')){
+            $image = $request->image->store('images','public');
+            Storage::disk('public')->delete($user->image);
+            $data['image'] = $image;
+        }
+        $user->update($data);
 
         if($request->role_id == 2){
             $user->syncRoles([$request->role_id]);

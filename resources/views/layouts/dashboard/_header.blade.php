@@ -22,3 +22,9 @@
         </li>
     </ul>
 </header>
+<style>
+    .imageSize{
+        width: 100px;
+        height:80px;
+    }
+</style>

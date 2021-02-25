@@ -33,7 +33,7 @@
     <div class="tile mb-4">
         <div class="row">
             <div class="col-md-12">
-             <form action="{{isset($user)?route('dashboard.users.update',$user->id):route('dashboard.users.store')}}" method="post">
+             <form action="{{isset($user)?route('dashboard.users.update',$user->id):route('dashboard.users.store')}}" method="post" enctype="multipart/form-data">
                  @csrf
                  @if(isset($user))
                      @method('put')
@@ -68,11 +68,17 @@
                  @endif
 
 
-                     {{-- image --}}
+
                  <div class="form-group">
-                     <label>{{__('site.image')}} :</label>
-                     <input type="file" name="image" class="form-control">
+                     <label>{{__('site.image')}} :</label><br>
+                     @isset($user)
+                         <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>
+                         <input type="file" name="image" class="form-control" value="{{isset($user)?$user->image:""}}">
+                     @else
+                         <input type="file" name="image" class="form-control" value="{{isset($user)?$user->image:""}}">
+                     @endisset
                  </div>
+
 
                 {{-- Role --}}
                  <div class="form-group">

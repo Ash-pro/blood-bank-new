@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\TeamWork;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamWorkController extends Controller
 {
@@ -23,8 +24,8 @@ class TeamWorkController extends Controller
 
     public function index()
     {
-        $categories = TeamWork::WhenSearch(request()->search)->paginate(5);
-        return view($this->path.'index',compact('categories'));
+        $team_works = TeamWork::WhenSearch(request()->search)->paginate(5);
+        return view($this->path.'index',compact('team_works'));
     }//end of index
 
     public function create()
@@ -35,9 +36,15 @@ class TeamWorkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'TeamWork_name' => 'required|unique:categories,TeamWork_name',
+            'email' => 'required|unique:team_works,email',
         ]);
-        TeamWork::create($request->all());
+        $data = $request->except('image');
+//        dd($data);
+        if ($request->hasFile('image')){
+            $image = $request->image->store('images','public');
+            $data['image'] = $image;
+        }
+        TeamWork::create($data);
         session()->flash('success',__('site.DataAddSuccessfully'));
         return redirect()->route($this->path.'index');
     }//end of store
@@ -47,24 +54,32 @@ class TeamWorkController extends Controller
         //
     }//end of show
 
-    public function edit(TeamWork $TeamWork)
+    public function edit(TeamWork $team_work)
     {
-        return view($this->path.'create',compact('TeamWork'));
+        return view($this->path.'create',compact('team_work'));
     }//end of edit
 
-    public function update(Request $request, TeamWork $TeamWork)
+    public function update(Request $request, TeamWork $team_work)
     {
         $request->validate([
-            'TeamWork_name' => 'required|unique:categories,TeamWork_name,'.$TeamWork->id,
+            'email' => 'required|unique:team_works,email,'.$team_work->id,
         ]);
-        $TeamWork->update($request->all());
+
+        $data = $request->except('image');
+        if ($request->hasFile('image')){
+            $image = $request->image->store('images','public');
+            Storage::disk('public')->delete($team_work->image);
+            $data['image'] = $image;
+        }
+        $team_work->update($data);
+
         session()->flash('success',__('site.DataUpdatedSuccessfully'));
         return redirect()->route($this->path.'index');
     }//end of update
 
-    public function destroy(TeamWork $TeamWork)
+    public function destroy(TeamWork $team_work)
     {
-        $TeamWork->delete();
+        $team_work->delete();
         session()->flash('success',__('site.DataDeletedSuccessfully'));
         return redirect()->route($this->path.'index');
     }//end of destroy

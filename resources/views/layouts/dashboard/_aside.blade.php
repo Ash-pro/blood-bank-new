@@ -30,9 +30,8 @@
                 </span>
                 </a>
             </li>
-
-
          @endif
+
 
 {{--        @if(auth()->user()->hasPermission('read_WhoAreWe'))--}}
 {{--            <li>--}}
@@ -77,6 +76,70 @@
                 </a>
             </li>
         @endif
+       @if(auth()->user()->hasPermission('read_blood_donations'))
+            <li>
+                <a class="app-menu__item " href="{{route('dashboard.blood_donations.index')}}">
+                    <i class="app-menu__icon fa fa-users"></i>
+                    <span
+                        class="app-menu__label">{{ __('site.Request_donation')}}
+                </span>
+                </a>
+            </li>
+        @endif
+        @if(auth()->user()->hasPermission('read_classifications'))
+            <li>
+                <a class="app-menu__item " href="{{route('dashboard.classifications.index')}}">
+                    <i class="app-menu__icon fa fa-users"></i>
+                    <span
+                        class="app-menu__label">{{ __('site.classification')}}
+                </span>
+                </a>
+            </li>
+        @endif
+        @if(auth()->user()->hasPermission('read_team_works'))
+            <li class="treeview">
+            <li>
+                <a class="app-menu__item" href="{{route('dashboard.team_works.index')}}">
+                    <i class="app-menu__icon fa fa-users"></i>
+                    <span
+                        class="app-menu__label"> {{ __('site.team_works')}}
+                </span>
+                </a>
+            </li>
+        @endif
+        @if(auth()->user()->hasPermission('read_visitor_messages'))
+            <li class="treeview">
+            <li>
+                <a class="app-menu__item" href="{{route('dashboard.visitor_messages.index')}}">
+                    <i class="app-menu__icon fa fa-users"></i>
+                    <span
+                        class="app-menu__label"> {{ __('site.visitor_messages')}}
+                </span>
+                </a>
+            </li>
+        @endif
+{{--    @if(auth()->user()->hasPermission('read_classifications'))--}}
+{{--            <li class="treeview">--}}
+{{--                <a class="app-menu__item" href="#" data-toggle="treeview">--}}
+{{--                    <i class="app-menu__icon fa fa-laptop"></i>--}}
+{{--                    <span class="app-menu__label text-capitalize">{{ __('site.classification')}}</span>--}}
+{{--                    <i class="treeview-indicator fa fa-angle-right"></i>--}}
+{{--                </a>--}}
+{{--                <ul class="treeview-menu">--}}
+{{--                    <li>--}}
+{{--                        <a class="treeview-item" href="{{route('dashboard.classifications.index')}}"--}}
+{{--                           rel="noopener"><i class="icon fa fa-circle-o"></i> {{ __('site.classification_request')}}--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a class="treeview-item" href="{{route('dashboard.trusted_requests.index')}}"--}}
+{{--                           rel="noopener"><i class="icon fa fa-circle-o"></i> {{ __('site.Trusted_request')}}--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+
+{{--                </ul>--}}
+{{--            </li>--}}
+{{--        @endif--}}
 
         @if(auth()->user()->hasPermission('read_settings'))
             <li class="treeview">

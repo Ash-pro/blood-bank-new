@@ -20,30 +20,6 @@ class UsersTableSeeder extends Seeder
 //           'type_user'=>'super_admin'
         ]);
 
-        \App\Category::create([
-            'category_name'=>'O Positive',
-        ]);
-        \App\Category::create([
-            'category_name'=>'A Positive',
-        ]);
-        \App\Category::create([
-            'category_name'=>'B Positive',
-        ]);
-        \App\Category::create([
-            'category_name'=>'AB Positive',
-        ]);
-        \App\Category::create([
-            'category_name'=>'O negative',
-        ]);
-        \App\Category::create([
-            'category_name'=>'A negative',
-        ]);
-        \App\Category::create([
-            'category_name'=>'B negative',
-        ]);
-        \App\Category::create([
-            'category_name'=>'AB negative',
-        ]);
 
 
         $user->attachRoles(['super_admin']);

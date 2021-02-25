@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutusPagesTable extends Migration
+class CreateTrustedRequestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateAboutusPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('aboutus_pages', function (Blueprint $table) {
-            $table->id();
+        Schema::create('trusted_requests', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('national_id');
+            $table->enum('type',['real'=>1,'fake'=>0]);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateAboutusPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aboutus_pages');
+        Schema::dropIfExists('trusted_requests');
     }
 }

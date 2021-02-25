@@ -16,13 +16,14 @@ class CreateTeamWorksTable extends Migration
         Schema::create('team_works', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('Phone');
-            $table->string('image');
-            $table->string('address');
-            $table->string('facebook_link');
-            $table->string('twitter_link');
-            $table->string('instagram_link');
-
+            $table->string('email');
+            $table->string('image')->nullable();
+            $table->string('Phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('name_contact_1')->nullable();
+            $table->string('link_contact_1')->nullable();
+            $table->string('name_contact_2')->nullable();
+            $table->string('link_contact_2')->nullable();
             $table->timestamps();
         });
     }

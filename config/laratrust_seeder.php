@@ -25,9 +25,13 @@ return [
 //            'serviceItem' => 'c,r,u,d',
 //            'advertisement' => 'c,r,u,d',
 //            'advertisementItem' => 'c,r,u,d',
+            'blood_donations' => 'c,r,u,d',
+            'classifications' => 'c,r,u,d',
+            'trusted_requests' => 'c,r,u,d',
             'WhoAreWe' => 'c,r,u,d',
             'contact_us' => 'c,r,u,d',
             'team_works' => 'c,r,u,d',
+            'visitor_messages' => 'c,r,u,d',
         ],
 
         'admin' => [],

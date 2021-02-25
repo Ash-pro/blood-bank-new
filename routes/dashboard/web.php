@@ -29,6 +29,17 @@ Route::prefix('dashboard')
     //User Route
         Route::resource('users','UserController');
 
+    //blood_donations Route
+        Route::resource('blood_donations','BloodDonationController');
+    //classification Route
+        Route::resource('classifications','ClassificationRequestController');
+    //trusted_request Route
+        Route::resource('trusted_requests','TrustedRequestController');
+    //team_works Route
+        Route::resource('team_works','TeamWorkController');
+    //team_works Route
+        Route::resource('visitor_messages','VisitorMessagesController');
+
         // Setting Route
         Route::get('/settings/social_login','SettingController@Social_Login')->name('settings.social_login');
         Route::get('/settings/social_link','SettingController@Social_Links')->name('settings.social_links');

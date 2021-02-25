@@ -66,6 +66,7 @@
                             <th>#</th>
                             <th>{{__('site.name')}}</th>
                             <th>{{__('site.email')}}</th>
+                            <th>{{__('site.image')}}</th>
                             <th>{{__('site.Role')}}</th>
                             <th>{{__('site.action')}}</th>
                         </tr>
@@ -76,6 +77,7 @@
                                 <td>{{++$index}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
+                                <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>
                                 <td>
                                     @foreach( $user->roles as $role )
                                      <span style="display: inline-block" class="badge badge-primary">{{$role->name}}</span>
