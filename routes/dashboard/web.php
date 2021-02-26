@@ -44,6 +44,8 @@ Route::prefix('dashboard')
         Route::get('/settings/social_login','SettingController@Social_Login')->name('settings.social_login');
         Route::get('/settings/social_link','SettingController@Social_Links')->name('settings.social_links');
         Route::post('/social_links','SettingController@store')->name('settings.store');
+        //about_sites
+        Route::get('/settings/about_sites','SettingController@about_sites')->name('settings.about_sites');
+        Route::post('/about_sites','SettingController@store_about_sites')->name('settings.store_about_sites');
 
-
-});
+    });

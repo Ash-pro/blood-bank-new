@@ -166,31 +166,15 @@
                            rel="noopener"><i class="icon fa fa-circle-o"></i> {{ __('site.Social Links')}}
                         </a>
                     </li>
+                    <li>
+                        <a class="treeview-item" href="{{route('dashboard.settings.about_sites')}}"
+                           rel="noopener"><i class="icon fa fa-circle-o"></i> {{ __('site.about_sites')}}
+                        </a>
+                    </li>
                 </ul>
             </li>
         @endif
 
-{{--         @if(auth()->user()->hasPermission('read_donations'))--}}
-{{--            <li>--}}
-{{--                <a class="app-menu__item " href="{{route('dashboard.donations.index')}}">--}}
-{{--                    <i class="app-menu__icon fa fa-product-hunt"></i>--}}
-{{--                    <span--}}
-{{--                        class="app-menu__label">{{ __('site.Donation items')}}--}}
-{{--                </span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--        @endif--}}
-
-{{--        @if(auth()->user()->hasPermission('read_posts'))--}}
-{{--            <li>--}}
-{{--                <a class="app-menu__item " href="#">--}}
-{{--                    <i class="app-menu__icon fa Example of clipboard fa-clipboard"></i>--}}
-{{--                    <span--}}
-{{--                        class="app-menu__label">{{ __('site.Posts')}}--}}
-{{--                </span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--        @endif--}}
 
 
     </ul>

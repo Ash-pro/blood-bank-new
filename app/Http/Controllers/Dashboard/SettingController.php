@@ -25,6 +25,17 @@ class SettingController extends Controller
         setting($request->all())->save();
         session()->flash('success',__('site.DataSavedSuccessfully'));
         return redirect()->back();
+    }//end of
+
+
+    public function about_sites (){
+        return view($this->path.'about_sites');
+    }//end of Social_Login
+
+    public function store_about_sites (Request $request){
+        setting($request->all())->save();
+        session()->flash('success',__('site.DataSavedSuccessfully'));
+        return redirect()->back();
 
     }//end of
 }

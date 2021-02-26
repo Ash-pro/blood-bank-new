@@ -18,7 +18,6 @@ class VisitorMessagesController extends Controller
         $this->middleware('permission:create_visitor_messages')->only(['create','store']);
         $this->middleware('permission:update_visitor_messages')->only(['edit','update']);
         $this->middleware('permission:delete_visitor_messages')->only(['destroy']);
-
     }
 
     public function index()

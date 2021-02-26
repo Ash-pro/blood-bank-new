@@ -108,6 +108,13 @@ return [
     'Team_Work' => 'Team Work',
     'team_works' => 'Team Work',
     'Phone' => 'Phone',
+    'visitor_messages' => 'Visitor Messages',
+    'about_sites' => 'About Sites',
+    'name_site' => 'name site',
+    'mission' => 'mission',
+    'vision' => 'vision',
+    'description' => 'description',
+    'address' => 'address',
 
 
 //// Donations

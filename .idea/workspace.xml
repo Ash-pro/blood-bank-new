@@ -2,25 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed990804-3a65-4a53-8ce0-d9e6e57d6df0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/settings/about_sites.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/TeamWorkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/TeamWorkController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/laratrust_seeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laratrust_seeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_31_093334_create_aboutus_pages_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_085022_create_team_works_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_085022_create_team_works_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AboutSite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/AboutSiteController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/VisitorMessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/VisitorMessagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/whoAreWeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/TrustedRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/WhoAreWe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/aboutusPage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_02_200856_create_who_are_wes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_15_124459_create_trusted_requests_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_15_124834_create_about_sites_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/site.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/team_works/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/team_works/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/team_works/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/team_works/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/users/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/visitor_messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/visitor_messages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/dashboard/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/dashboard/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +174,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/settings" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -187,11 +186,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\BloodBank\resources\views\dashboard\settings" />
       <recent name="C:\laragon\www\BloodBank\resources\views\dashboard" />
       <recent name="C:\laragon\www\Al_mosafer\resources\views\dashboard\contact_us" />
       <recent name="C:\laragon\www\Al_mosafer\resources\views\dashboard\WhoAreWe" />
       <recent name="C:\laragon\www\Al_mosafer\resources\views\dashboard\advertisementItems" />
-      <recent name="C:\laragon\www\Al_mosafer\resources\views\dashboard\advertisement" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\BloodBank\app" />
@@ -249,7 +248,7 @@
       <workItem from="1613388095665" duration="549000" />
       <workItem from="1613389051006" duration="5715000" />
       <workItem from="1613461374916" duration="164000" />
-      <workItem from="1614170430505" duration="27618000" />
+      <workItem from="1614170430505" duration="31510000" />
     </task>
     <servers />
   </component>
@@ -281,10 +280,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1614267767416" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614283612826">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614316000480">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1614283612826" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1614316000480" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
