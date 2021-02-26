@@ -79,7 +79,7 @@
                                 <td class=" text-center">
                                     {{--show buttom--}}
                                     @if(auth()->user()->hasPermission('read_blood_donations'))
-                                        <a href="{{route('dashboard.blood_donations.show', $blood_donation->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit">{{__('site.show')}}</i></a>
+                                        <a href="{{route('dashboard.blood_donations.show', $blood_donation->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit">{{__('site.show')}}</i></a>
                                     @else
                                         <a href="#" disabled="" class="btn btn-warning btn-sm"><i class="fa fa-edit">{{__('site.Edit')}}</i></a>
                                     @endif

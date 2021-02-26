@@ -44,9 +44,10 @@ class BloodDonationController extends Controller
         return redirect()->route($this->path.'index');
     }//end of store
 
-    public function show($id)
+    public function show(BloodDonation $blood_donation)
     {
-        return view($this->path.'show');
+        $categories = Category::all();
+        return view($this->path.'show',compact(['blood_donation','categories']));
     }//end of show
 
     public function edit(BloodDonation $blood_donation)

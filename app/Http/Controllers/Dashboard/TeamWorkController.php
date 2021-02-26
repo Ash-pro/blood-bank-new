@@ -49,9 +49,9 @@ class TeamWorkController extends Controller
         return redirect()->route($this->path.'index');
     }//end of store
 
-    public function show($id)
+    public function show(TeamWork $team_work)
     {
-        //
+        return view($this->path.'show',compact('team_work'));
     }//end of show
 
     public function edit(TeamWork $team_work)

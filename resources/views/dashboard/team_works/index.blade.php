@@ -78,6 +78,13 @@
                                 <td><img class="imageSize" src="{{asset('storage/'.$team_work->image)}}" alt=""></td>
 {{--                                <td> {{\Illuminate\Support\Str::limit($team_work->category_name, 100)}} </td>--}}
                                 <td>
+                                    {{--show buttom--}}
+                                    @if(auth()->user()->hasPermission('read_team_works'))
+                                        <a href="{{route('dashboard.team_works.show', $team_work->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit">{{__('site.show')}}</i></a>
+                                    @else
+                                        <a href="#" disabled="" class="btn btn-warning btn-sm"><i class="fa fa-edit">{{__('site.Edit')}}</i></a>
+                                    @endif
+
                                     {{--Edit buttom--}}
                                     @if(auth()->user()->hasPermission('update_team_works'))
                                         <a href="{{route('dashboard.team_works.edit', $team_work->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit">Edit</i></a>
