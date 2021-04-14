@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/', 'LandingPageController@Landing')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'LandingPageController@Landing');
-Route::post('/store', 'LandingPageController@store')->name('store');
+Route::post('/storeMessage', 'LandingPageController@storeMessage')->name('storeMessage');
 
 
 //Route::post('consultation_requests','App\Http\Controllers\Dashboard\Consultation_requestsController@store')->name('consultation_requests');

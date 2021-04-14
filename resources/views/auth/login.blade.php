@@ -18,7 +18,7 @@
     <div class="logo">
         <h1>{{__('site.title_login')}}</h1>
     </div>
-    <div class="login-box">
+    <div class="login-box1">
         <form class="login-form"  method="POST" action="{{ route('login') }}">
               @csrf
             <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>

@@ -68,22 +68,22 @@
                      <label>{{__('site.Phone')}} :</label>
                      <input type="text" name="Phone" class="form-control" value="{{isset($team_work)?$team_work->Phone:""}}" disabled>
                  </div>
-                 <div class="form-group">
-                     <label>{{__('site.name_contact_1')}} :</label>
-                     <input type="text" name="name_contact_1" class="form-control" value="{{isset($team_work)?$team_work->name_contact_1:""}}" disabled>
-                 </div>
-                 <div class="form-group">
-                     <label>{{__('site.link_contact_1')}} :</label>
-                     <input type="text" name="link_contact_1" class="form-control" value="{{isset($team_work)?$team_work->link_contact_1:""}}" disabled>
-                 </div>
-                 <div class="form-group">
-                     <label>{{__('site.name_contact_2')}} :</label>
-                     <input type="text" name="name_contact_2" class="form-control" value="{{isset($team_work)?$team_work->name_contact_2:""}}" disabled>
-                 </div>
-                 <div class="form-group">
-                     <label>{{__('site.link_contact_2')}} :</label>
-                     <input type="text" name="link_contact_2" class="form-control" value="{{isset($team_work)?$team_work->link_contact_2:""}}" disabled>
-                 </div>
+{{--                 <div class="form-group">--}}
+{{--                     <label>{{__('site.name_contact_1')}} :</label>--}}
+{{--                     <input type="text" name="name_contact_1" class="form-control" value="{{isset($team_work)?$team_work->name_contact_1:""}}" disabled>--}}
+{{--                 </div>--}}
+{{--                 <div class="form-group">--}}
+{{--                     <label>{{__('site.link_contact_1')}} :</label>--}}
+{{--                     <input type="text" name="link_contact_1" class="form-control" value="{{isset($team_work)?$team_work->link_contact_1:""}}" disabled>--}}
+{{--                 </div>--}}
+{{--                 <div class="form-group">--}}
+{{--                     <label>{{__('site.name_contact_2')}} :</label>--}}
+{{--                     <input type="text" name="name_contact_2" class="form-control" value="{{isset($team_work)?$team_work->name_contact_2:""}}" disabled>--}}
+{{--                 </div>--}}
+{{--                 <div class="form-group">--}}
+{{--                     <label>{{__('site.link_contact_2')}} :</label>--}}
+{{--                     <input type="text" name="link_contact_2" class="form-control" value="{{isset($team_work)?$team_work->link_contact_2:""}}" disabled>--}}
+{{--                 </div>--}}
 
 {{--                 <div class="form-group">--}}
 {{--                     <button type="submit" class="btn btn-primary">--}}

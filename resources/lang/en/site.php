@@ -114,7 +114,16 @@ return [
     'mission' => 'mission',
     'vision' => 'vision',
     'description' => 'description',
-    'address' => 'address',
+    'whatsUp' => 'whatsUp',
+    'twitter' => 'Twitter',
+    'copyright' => 'copyright',
+    'title_register' => 'Register',
+    'Search' => 'Search',
+    'active' => 'active',
+    'Active' => 'Active',
+    'Action' => 'Action',
+    'UserDetails' => 'User Details',
+    'Age' => 'Age',
 
 
 //// Donations

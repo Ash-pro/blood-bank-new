@@ -53,8 +53,9 @@
                      <input type="text" name="national_id" class="form-control" value="{{isset($blood_donation)?$blood_donation->national_id:""}}">
                  </div>
                  <div class="form-group">
-                     <label class="text-capitalize">{{__('site.birthday_date')}} :</label>
-                     <input type="date" name="birthday_date" class="form-control" value="{{isset($blood_donation)?$blood_donation->birthday_date:""}}">
+                     <label class="text-capitalize">{{__('site.Age')}} :</label>
+                     <h6 style="color: red;">your age must be at least 16 years old</h6>
+                     <input type="number" name="birthday_date" class="form-control" value="{{isset($blood_donation)?$blood_donation->birthday_date:""}}">
                  </div>
 
                  {{-- blood_type --}}
@@ -86,10 +87,20 @@
                      <label class="text-capitalize">{{__('site.last_donation_date')}} :</label>
                      <input type="date" name="last_donation_date" class="form-control" value="{{isset($blood_donation)?$blood_donation->last_donation_date:""}}">
                  </div>
-                 <div class="form-group">
-                     <label class="text-capitalize">{{__('site.province_name')}} :</label>
-                     <input type="text" name="province_name" class="form-control" value="{{isset($blood_donation)?$blood_donation->province_name:""}}">
-                 </div>
+
+                 {{-- Select of  --}}
+                  <div class="form-group">
+                      <label>{{__('site.province_name')}} :</label>
+                      <select name="province_name" class="form-control">
+                              <option value="Jerusalem">Jerusalem </option>
+                              <option value="Ramallah">Ramallah</option>
+                              <option value="Salfit">Salfit </option>
+                              <option value="Hebron">Hebron </option>
+                              <option value="Jericho">Jericho </option>
+                              <option value="Bethlehem">Bethlehem </option>
+                      </select>
+                  </div>
+
                  <div class="form-group">
                      <label class="text-capitalize">{{__('site.region_name')}} :</label>
                      <input type="text" name="region_name" class="form-control" value="{{isset($blood_donation)?$blood_donation->region_name:""}}">
@@ -102,7 +113,19 @@
                      <label class="text-capitalize">{{__('site.unit_number')}} :</label>
                      <input type="number" name="unit_number" class="form-control" value="{{isset($blood_donation)?$blood_donation->unit_number:""}}">
                  </div>
+                 @if(auth()->user()->hasRole('super_admin'))
+                 <div class="form-group">
+                     {{-- Select of  --}}
+                      <div class="form-group">
+                          <label>{{__('site.Active')}} :</label>
+                          <select name="active" class="form-control">
+                              <option value="1">Appear</option>
+                              <option value="0">DisAppear</option>
 
+                          </select>
+                      </div>
+                 </div>
+                 @endif
 
                  <div class="form-group">
                      <label class="text-capitalize">{{__('site.messages')}} :</label>

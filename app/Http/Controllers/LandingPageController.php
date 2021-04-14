@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Advertisement;
-use App\AdvertisementItems;
+
 use App\Category;
-use App\Consultation_requests;
 use App\ContactUs;
-use App\ServiceItem;
-use App\WhoAreWe;
+use App\TeamWork;
+use App\VisitorMessages;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -20,9 +18,24 @@ class LandingPageController extends Controller
     }
 
     public function Landing(){
-        return view($this->path);
+
+
+        $teamWorks = TeamWork::get();
+//        dd($teamWorks);
+        return view($this->path,compact(['teamWorks']));
 
     }//end of Landing
+
+
+    public function storeMessage(Request $request)
+    {
+        VisitorMessages::create($request->all());
+        session()->flash('success',__('site.DataAddSuccessfully'));
+        return view('thanks');
+    }//end of store
+
+
+
 ////
 //    public function store (Request $request){
 ////        dd(1);

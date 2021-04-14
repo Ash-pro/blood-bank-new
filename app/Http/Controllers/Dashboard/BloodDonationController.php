@@ -24,8 +24,13 @@ class BloodDonationController extends Controller
 
     public function index()
     {
-        $blood_donations = BloodDonation::WhenSearch(request()->search)->paginate(8);
-        return view($this->path.'index',compact('blood_donations'));
+        $categories = Category::all();
+
+        $blood_donations = BloodDonation::WhenSearch(request()->search )
+            ->WhenSearch2(request()->search2)
+            ->orderBy('created_at', 'desc')
+            ->paginate(8);
+        return view($this->path.'index',compact(['blood_donations','categories']));
     }//end of index
 
     public function create()
@@ -38,8 +43,12 @@ class BloodDonationController extends Controller
     {
         $request->validate([
             'national_id' => 'required|unique:blood_donations,national_id',
+            'birthday_date' => 'required|integer|min:16',
+            'last_donation_date' => 'required',
         ]);
-        BloodDonation::create($request->all());
+        $data = $request->except('user_id');
+        $data['user_id'] = auth()->user()->id;
+        BloodDonation::create($data);
         session()->flash('success',__('site.DataAddSuccessfully'));
         return redirect()->route($this->path.'index');
     }//end of store
@@ -61,7 +70,10 @@ class BloodDonationController extends Controller
         $request->validate([
             'national_id' => 'required|unique:blood_donations,national_id,'.$blood_donation->id,
         ]);
-        $blood_donation->update($request->all());
+        $data = $request->except('user_id');
+//        $data['user_id'] = auth()->user()->id;
+        $blood_donation->update($data);
+
         session()->flash('success',__('site.DataUpdatedSuccessfully'));
         return redirect()->route($this->path.'index');
     }//end of update

@@ -6,11 +6,13 @@
                     hight="100px"
                     alt="User Image">
         <div>
-            <p class="app-sidebar__user-name">{{auth()->user()->name}}</p>
+            <p class="app-sidebar__user-name" style="font-size: small">{{auth()->user()->email}}</p>
             <p class="app-sidebar__user-designation">{{implode(', ' , auth()->user()->roles->pluck('name')->toArray())}}</p>
         </div>
     </div>
     <ul class="app-menu">
+        @if(auth()->user()->hasPermission('read_dashboard'))
+
         <li>
             <a class="app-menu__item" href="{{route('dashboard.welcome')}}">
                 <i class="app-menu__icon fa fa-dashboard"></i>
@@ -19,6 +21,21 @@
                 </span>
             </a>
         </li>
+        @endif
+
+
+        @if(auth()->user()->hasPermission('read_UserDetails'))
+        <li>
+            <a class="app-menu__item" href="{{route('dashboard.UserDetails.index')}}">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span
+                    class="app-menu__label">{{ __('site.UserDetails')}}
+                </span>
+            </a>
+        </li>
+        @endif
+
+
          <li>
          @if(auth()->user()->hasPermission('read_categories'))
             <li class="treeview">
@@ -86,16 +103,16 @@
                 </a>
             </li>
         @endif
-        @if(auth()->user()->hasPermission('read_classifications'))
-            <li>
-                <a class="app-menu__item " href="{{route('dashboard.classifications.index')}}">
-                    <i class="app-menu__icon fa fa-users"></i>
-                    <span
-                        class="app-menu__label">{{ __('site.classification')}}
-                </span>
-                </a>
-            </li>
-        @endif
+{{--        @if(auth()->user()->hasPermission('read_classifications'))--}}
+{{--            <li>--}}
+{{--                <a class="app-menu__item " href="{{route('dashboard.classifications.index')}}">--}}
+{{--                    <i class="app-menu__icon fa fa-users"></i>--}}
+{{--                    <span--}}
+{{--                        class="app-menu__label">{{ __('site.classification')}}--}}
+{{--                </span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @endif--}}
         @if(auth()->user()->hasPermission('read_team_works'))
             <li class="treeview">
             <li>

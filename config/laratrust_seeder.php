@@ -32,11 +32,26 @@ return [
             'contact_us' => 'c,r,u,d',
             'team_works' => 'c,r,u,d',
             'visitor_messages' => 'c,r,u,d',
+            'dashboard' => 'c,r,u,d',
+            'UserDetails' => 'c,r,u,d',
+            'print' => 'c,r,u,d',
+            'health_status' => 'c,r,u,d',
+
         ],
 
-        'admin' => [],
+        'admin' => [
+            'UserDetails' => 'c,r,u,d',
+            'blood_donations' => 'c,r,u,d',
+            'health_status' => 'c,r,u,d',
 
-        'user' => [],
+        ],
+
+        'user' => [
+            'UserDetails' => 'c,r,u,d',
+            'blood_donations' => 'c,r,u,d',
+            'health_status' => 'c,r,u,d',
+
+        ],
 
     ],
 //    'permission_structure'=>[

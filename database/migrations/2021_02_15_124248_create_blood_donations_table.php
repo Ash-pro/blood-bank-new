@@ -19,7 +19,7 @@ class CreateBloodDonationsTable extends Migration
             $table->integer('national_id')->unique();
             $table->string('birthday_date');
             // فصيلة الدم
-            $table->string('blood_type');
+            $table->unsignedBigInteger('blood_type');
             $table->string('last_donation_date');
             // اسم المحافظة
             $table->string('province_name');
@@ -29,8 +29,13 @@ class CreateBloodDonationsTable extends Migration
             // عدد الوحدات المراد التبرع بها
             $table->integer('unit_number');
             $table->string('donation_form')->nullable();
+            $table->boolean('active')->default(0);
             $table->text('messages')->nullable();
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('blood_type')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

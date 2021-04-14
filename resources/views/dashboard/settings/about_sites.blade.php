@@ -4,7 +4,7 @@ $name_site = setting('name_site');
 $mission = setting('mission');
 $vision = setting('vision');
 $description = setting('description');
-$address = setting('address');
+$copyright = setting('copyright');
 
 @endphp
 
@@ -51,7 +51,7 @@ $address = setting('address');
 
                       <div class="form-group">
                           <label>{{ucfirst(__('site.vision'))}} :</label>
-                          <input type="text" name="name_site" class="form-control" value="{{$vision}}">
+                          <input type="text" name="vision" class="form-control" value="{{$vision}}">
                       </div>
 
                       <div class="form-group">
@@ -61,9 +61,9 @@ $address = setting('address');
                       </div>
 
                       <div class="form-group">
-                          <label>{{ucfirst(__('site.address'))}} :</label>
-                          <input type="text" name="address" class="form-control" value="{{$address}}">
-                      </div>
+                     <label>{{ucfirst(__('site.copyright'))}} :</label>
+                     <input type="text" name="copyright" class="form-control" value="{{$copyright}}">
+                 </div>
 
 {{--                 @foreach( $social_links as $social_link )--}}
 {{--                     <div class="form-group">--}}

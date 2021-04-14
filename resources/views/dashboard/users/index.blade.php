@@ -66,18 +66,19 @@
                             <th>#</th>
                             <th>{{__('site.name')}}</th>
                             <th>{{__('site.email')}}</th>
-                            <th>{{__('site.image')}}</th>
+{{--                            <th>{{__('site.image')}}</th>--}}
                             <th>{{__('site.Role')}}</th>
                             <th>{{__('site.action')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($users as $index=>$user)
-                            <tr>
+                            @if(auth()->user()->name = 'super_admin')
+                                <tr>
                                 <td>{{++$index}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>
+{{--                                <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>--}}
                                 <td>
                                     @foreach( $user->roles as $role )
                                      <span style="display: inline-block" class="badge badge-primary">{{$role->name}}</span>
@@ -103,6 +104,40 @@
 
                                 </td>
                             </tr>
+                            @else
+                                @if(auth()->user()->id = $user->id )
+                                <tr>
+                                    <td>{{++$index}}</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
+{{--                                    <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>--}}
+                                    <td>
+                                        @foreach( $user->roles as $role )
+                                            <span style="display: inline-block" class="badge badge-primary">{{$role->name}}</span>
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @if(auth()->user()->hasPermission('update_users'))
+                                            <a href="{{route('dashboard.users.edit', $user->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit">Edit</i></a>
+                                        @else
+                                            <a href="#" disabled="" class="btn btn-warning btn-sm"><i class="fa fa-edit">Edit</i></a>
+                                        @endif
+
+                                        @if(auth()->user()->hasPermission('delete_users'))
+                                            <form action="{{route('dashboard.users.destroy', $user->id)}}" method="post" style="display: inline-block">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i>Delete</button>
+                                            </form>
+                                        @else
+                                            <a href="#" disabled class="btn btn-danger btn-sm"><i class="fa fa-edit">Delete</i></a>
+                                        @endif
+
+
+                                    </td>
+                                </tr>
+                                @endif
+                            @endif
                         @endforeach
 
                         </tbody>

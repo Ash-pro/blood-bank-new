@@ -44,26 +44,29 @@ class DashboradTableSeeder extends Seeder
             'full_name'=>'maryam ahmad',
             'national_id'=>'401456987',
             'birthday_date'=>'1998-06-16',
-            'blood_type'=>'5',
+            'blood_type'=>'1',
             'last_donation_date'=>'2020-01-09',
             'province_name'=>'القدس',
             'region_name'=>'شارع الأقصى',
             'phone_number'=>'059999999999',
             'unit_number'=>'3',
             'messages'=>'thanks',
+            'user_id'=>1,
         ]);
        \App\BloodDonation::create([
             'full_name'=>'soha yosef',
             'national_id'=>'401000000',
             'birthday_date'=>'2000-06-16',
-            'blood_type'=>'5',
+            'blood_type'=>'2',
             'last_donation_date'=>'2020-01-09',
             'province_name'=>'رام الله',
             'region_name'=>'شارع الأقصى',
             'phone_number'=>'059999999999',
             'unit_number'=>'3',
             'messages'=>'thanks',
-        ]);
+           'user_id'=>1,
+
+       ]);
        \App\BloodDonation::create([
             'full_name'=>'amal amal',
             'national_id'=>'401111111',
@@ -75,7 +78,9 @@ class DashboradTableSeeder extends Seeder
             'phone_number'=>'059999999999',
             'unit_number'=>'3',
             'messages'=>'thanks',
-        ]);
+           'user_id'=>1,
+
+       ]);
 
 //-------ClassificationRequest
        \App\ClassificationRequest::create([

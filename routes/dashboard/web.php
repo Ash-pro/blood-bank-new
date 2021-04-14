@@ -15,10 +15,10 @@ Route::prefix('dashboard')
         Route::resource('categories','CategoryController')->except(['show']);
 
     //sub Categories
-        Route::resource('sub_categories','SubCategoryController')->except(['show']);
+//        Route::resource('sub_categories','SubCategoryController')->except(['show']);
 
     //WhoAreWe
-            Route::resource('WhoAreWes','whoAreWeController')->except(['show']);
+//            Route::resource('WhoAreWes','whoAreWeController')->except(['show']);
 
     //contact_us
             Route::resource('contact_us','ContactUsController')->except(['show']);
@@ -28,13 +28,15 @@ Route::prefix('dashboard')
 
     //User Route
         Route::resource('users','UserController');
+    //UserDetails Route
+        Route::resource('UserDetails','UserDetails');
 
     //blood_donations Route
         Route::resource('blood_donations','BloodDonationController');
     //classification Route
-        Route::resource('classifications','ClassificationRequestController');
+//        Route::resource('classifications','ClassificationRequestController');
     //trusted_request Route
-        Route::resource('trusted_requests','TrustedRequestController');
+//        Route::resource('trusted_requests','TrustedRequestController');
     //team_works Route
         Route::resource('team_works','TeamWorkController');
     //team_works Route

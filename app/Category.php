@@ -24,7 +24,7 @@ class Category extends Model
         /* I use scope for i can call it easy from controller == so I can use it in controller as WhenSearch without scope */
     public function scopeWhenSearch($query , $search){
         return $query->when($search ,function ($q) use ($search){
-            return $q->where('name','like',"%$search%");
+            return $q->where('category_name','like',"%$search%");
         });
 
     }//end of scopeWhenSearch

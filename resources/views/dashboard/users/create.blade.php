@@ -69,17 +69,17 @@
 
 
 
-                 <div class="form-group">
-                     <label>{{__('site.image')}} :</label><br>
-                     @isset($user)
-                         <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>
-                         <input type="file" name="image" class="form-control" value="{{isset($user)?$user->image:""}}">
-                     @else
-                         <input type="file" name="image" class="form-control" value="{{isset($user)?$user->image:""}}">
-                     @endisset
-                 </div>
+{{--                 <div class="form-group">--}}
+{{--                     <label>{{__('site.image')}} :</label><br>--}}
+{{--                     @isset($user)--}}
+{{--                         <td><img class="imageSize" src="{{asset('storage/'.$user->image)}}" alt=""></td>--}}
+{{--                         <input type="file" name="image" class="form-control" value="{{isset($user)?$user->image:""}}">--}}
+{{--                     @else--}}
+{{--                         <input type="file" name="image" class="form-control" value="{{isset($user)?$user->image:""}}">--}}
+{{--                     @endisset--}}
+{{--                 </div>--}}
 
-
+                @if(auth()->user()->hasPermission('dashboard'))
                 {{-- Role --}}
                  <div class="form-group">
                      <label>{{__('site.Role')}} :</label>
@@ -105,6 +105,8 @@
                      {{-- make new Role --}}
                      <a href="{{route('dashboard.roles.create')}}" ><b>Create New Role</b>  </a>
                  </div>
+                @endif
+{{--                 <input type="hidden" name="role_id" class="form-control" value="2">--}}
 
                  <div class="form-group">
                      @if(auth()->user()->hasPermission('create_users'))

@@ -41,12 +41,13 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+//        dd($request->all());
         $request->validate([
             'name' => 'required|min:2',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed|min:3',
             'image' => 'sometimes|nullable|image',
-            'role_id' => 'required|numeric',
+//            'role_id' => 'required|numeric',
         ]);
 
         $request->merge(['password'=>bcrypt($request->password)]);
@@ -54,6 +55,7 @@ class UserController extends Controller
         $data = $request->except('image');
         if ($request->hasFile('image')){
             $image = $request->image->store('images','public');
+//            dd(1);
             $data['image'] = $image;
         }
 //        dd($data);
@@ -79,12 +81,13 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+//        dd($request->all());
         $request->validate([
             'name' => 'required|min:2',
             'email' => 'required|email|unique:users,email,'.$user->id,
 //            'password' => 'sometimes|nullable|confirmed',
             'image' => 'sometimes|nullable|image',
-            'role_id' => 'required|numeric',
+//            'role_id' => 'required|numeric',
         ]);
         $data = $request->except('image');
 
@@ -93,6 +96,16 @@ class UserController extends Controller
             Storage::disk('public')->delete($user->image);
             $data['image'] = $image;
         }
+//        if ($request->password == null){
+//            $pass = User::where('id' ,$user->id )->get('password');
+//            $request->password = $pass;
+//        }else{
+//            $data['password'] = $request->password;
+//        }
+
+
+
+
         $user->update($data);
 
         if($request->role_id == 2){

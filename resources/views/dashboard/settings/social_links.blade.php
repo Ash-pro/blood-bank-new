@@ -28,7 +28,7 @@
 
 
                  @php
-                    $social_links = ['facebook','whatsUp','instagram','snapChat','youtubeChanel']
+                    $social_links = ['facebook','instagram','twitter','whatsUp','email','address']
                  @endphp
 
                  @foreach( $social_links as $social_link )
